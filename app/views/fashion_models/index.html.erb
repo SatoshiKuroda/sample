@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+      <span class="sr-only">メニュー</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+ 
+  <div id="gnavi" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="">Profile</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="">Contacts</a></li>
+    </ul>
+  </div>
+</nav>
+<p id="notice"><%= notice %></p>
+
+<h1>Fashion Models</h1>
+<div class="container-fluid">
+  <div class="container">
+    <h1>Blog</h1>
+    <div class="row">
+      <% @fashion_models.each do |fashion_model| %>
+          <div class="col-md-4">
+            <%= image_tag(post.post_images[0].image.thumb, {:style => 'width:100%; height:45;'}) %>
+            <h2><%= post.title %></h2>
+            <p><%= post.brief %></p>
+            <p><%= link_to 'Show', post %></p>
+ 
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Height</th>
+      <th>Bust</th>
+      <th>Waist</th>
+      <th>Hip</th>
+      <th>Gender</th>
+      <th>Agency</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fashion_models.each do |fashion_model| %>
+      <tr>
+        <td><%= fashion_model.name %></td>
+        <td><%= fashion_model.height %></td>
+        <td><%= fashion_model.bust %></td>
+        <td><%= fashion_model.waist %></td>
+        <td><%= fashion_model.hip %></td>
+        <td><%= fashion_model.gender %></td>
+        <td></td>
+        <td><%= link_to 'Show', fashion_model %></td>
+        <td><%= link_to 'Edit', edit_fashion_model_path(fashion_model) %></td>
+        <td><%= link_to 'Destroy', fashion_model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fashion Model', new_fashion_model_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fashion_model.name %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @fashion_model.height %>
+</p>
+
+<p>
+  <strong>Bust:</strong>
+  <%= @fashion_model.bust %>
+</p>
+
+<p>
+  <strong>Waist:</strong>
+  <%= @fashion_model.waist %>
+</p>
+
+<p>
+  <strong>Hip:</strong>
+  <%= @fashion_model.hip %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @fashion_model.gender %>
+</p>
+
+<p>
+  <strong>Agency:</strong>
+  <%= @fashion_model.agency %>
+</p>
+
+<%= link_to 'Edit', edit_fashion_model_path(@fashion_model) %> |
+<%= link_to 'Back', fashion_models_path %>
