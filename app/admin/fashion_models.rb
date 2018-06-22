@@ -14,14 +14,14 @@ ActiveAdmin.register FashionModel do
 
 #formのコード
   form do |f|
-    f.inputs '記事の内容' do
+    f.inputs 'モデル情報' do
       f.input :name
       f.input :height
       f.input :bust
       f.input :waist
       f.input :hip
       f.input :gender
-      f.input :agency_id
+      f.input :agency
       f.has_many :images, allow_destroy: true,
                 new_record: true do |t|
         t.input :image

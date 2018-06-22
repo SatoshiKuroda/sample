@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'fashion_models#index'
+
   
   resources :fashion_models
   devise_for :admin_users, ActiveAdmin::Devise.config
