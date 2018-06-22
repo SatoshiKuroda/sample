@@ -19,22 +19,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Fashion Models</h1>
-<div class="container-fluid">
-  <div class="container">
-    <h1>Blog</h1>
-    <div class="row">
-      <% @fashion_models.each do |fashion_model| %>
-          <div class="col-md-4">
-            <%= image_tag(post.post_images[0].image.thumb, {:style => 'width:100%; height:45;'}) %>
-            <h2><%= post.title %></h2>
-            <p><%= post.brief %></p>
-            <p><%= link_to 'Show', post %></p>
- 
-          </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+
 <table>
   <thead>
     <tr>

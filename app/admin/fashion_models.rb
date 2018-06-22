@@ -21,14 +21,15 @@ ActiveAdmin.register FashionModel do
       f.input :waist
       f.input :hip
       f.input :gender
+      f.input :agency_id
       f.has_many :images, allow_destroy: true,
-                 new_record: true do |t|
+                new_record: true do |t|
         t.input :image
       end
       f.actions
     end
   end
  
-  permit_params :name, :height, :bust, :waist, :hip, :gender,images_attributes: [:id, :image, :reference, :_destroy]
+  permit_params :name, :height, :bust, :waist, :hip, :gender, :agency, images_attributes: [:id, :image, :reference, :_destroy]
  
 end
