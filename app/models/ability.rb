@@ -2,14 +2,21 @@ class Ability
   include CanCan::Ability
 
   def initialize(admin_user)
+    admin_user || AdminUser.new # for guest
+    admin_user.admin_roles.each { |role| send(role.name.downcase) }
 
-    admin_user ||= AdminUser.new
-    if admin_user.admin?
-      can :manage, :all
+    if admin_user.admin_roles.size == 0
+      can :read, :all #for guest without roles
+    end
+  end
+
+    def admin
+      can :manage, FashionModel
     end
 
-    if admin_user.member?
-      can :read, :all
+    def super_admin
+      manager
+      can :manage, All
     end
     # Define abilities for the passed in user here. For example:
     #
@@ -37,5 +44,4 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
 end

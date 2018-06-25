@@ -12,6 +12,18 @@ ActiveAdmin.register FashionModel do
 #   permitted
 # end
 
+  show do |b|
+    attributes_table do
+      row :image do
+          image_tag(b.image.url)
+
+        end
+      default_actions
+    end
+  end
+
+ 
+
 #formのコード
   form do |f|
     f.inputs 'モデル情報' do
@@ -21,9 +33,9 @@ ActiveAdmin.register FashionModel do
       f.input :waist
       f.input :hip
       f.input :gender
-      f.input :agency
+      f.input :agency_id
       f.has_many :images, allow_destroy: true,
-                new_record: true do |t|
+        new_record: true do |t|
         t.input :image
       end
       f.actions

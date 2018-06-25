@@ -2,6 +2,7 @@ class FashionModelsController < InheritedResources::Base
   
   def index
     @fashion_models = FashionModel.all
+    @fashion_model.images.build
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,7 +35,7 @@ class FashionModelsController < InheritedResources::Base
   private
 
     def fashion_model_params
-      params.require(:fashion_model).permit(:name, :height, :bust, :waist, :hip, :gender, :agency)
+      params.require(:fashion_model).permit(:name, :height, :bust, :waist, :hip, :gender, :agency,images_attributes[:id,:image,])
     end
 end
 
