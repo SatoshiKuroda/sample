@@ -1,13 +1,7 @@
 class FashionModel < ApplicationRecord
-  has_many :images
+
+  has_many :fashion_model_and_images, dependent: :destroy
+  has_many :images, through: :fashion_model_and_images
   accepts_nested_attributes_for :images
-
-  def index
-    @fashion_models = FashionMondel.all
-  end
-
-  def show
-    @fashion_model = FashionModel.find(params[:id])
-  end
 
 end

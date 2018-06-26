@@ -1,5 +1,7 @@
 ActiveAdmin.register FashionModel do
-# See permitted parameters documentation:
+  permit_params :name, :height, :bust, :waist, :hip, :gender, :agency, images_attributes: [:id, :image, :reference, :_destroy]
+
+  # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model
@@ -11,16 +13,6 @@ ActiveAdmin.register FashionModel do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
-  show do |b|
-    attributes_table do
-      row :image do
-          image_tag(b.image.url)
-
-        end
-      default_actions
-    end
-  end
 
  
 
@@ -42,6 +34,6 @@ ActiveAdmin.register FashionModel do
     end
   end
  
-  permit_params :name, :height, :bust, :waist, :hip, :gender, :agency, images_attributes: [:id, :image, :reference, :_destroy]
+  
  
 end
