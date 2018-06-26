@@ -37,11 +37,11 @@ class FashionModelsController < InheritedResources::Base
       params.require(:fashion_model).permit(
         :name,
         :height,
-        :bust, 
-        :waist, 
-        :hip, 
-        :gender, 
-        :agency, 
+        :bust,
+        :waist,
+        :hip,
+        :gender,
+        :agency,
         images_attributes:[:id,:image])
     end
 end

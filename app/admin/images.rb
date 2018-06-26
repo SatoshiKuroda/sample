@@ -14,6 +14,7 @@ ActiveAdmin.register Image do
 #indexページ
 index as: :grid do |image|
   link_to image_tag(image.image_url), admin_image_path(image)
+
 end
   # index do
   #   selectable_column

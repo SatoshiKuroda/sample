@@ -33,7 +33,4 @@ ActiveAdmin.register FashionModel do
       f.actions
     end
   end
- 
-  
- 
 end
