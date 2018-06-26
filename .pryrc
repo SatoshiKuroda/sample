@@ -5,6 +5,9 @@ rescue LoadError
   # Missing goodies, bummer
 end
 
+require "awesome_print"
+AwesomePrint.pry!
+
 if defined? Hirb
   # Slightly dirty hack to fully support in-session Hirb.disable/enable toggling
   Hirb::View.instance_eval do

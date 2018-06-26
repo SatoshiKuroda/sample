@@ -11,7 +11,7 @@ class FashionModelsController < InheritedResources::Base
 
   def show
     @fashion_model = FashionModel.find(params[:id])
-
+    @images        = @fashion_model.images
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @friends }
