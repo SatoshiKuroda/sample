@@ -17,6 +17,7 @@ index as: :grid do |image|
 end
 
 index do
+  id_column
   column :image do |b|
     image_tag(b.image.url(:thumb))
   end
