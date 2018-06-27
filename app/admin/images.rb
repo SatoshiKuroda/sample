@@ -14,8 +14,15 @@ ActiveAdmin.register Image do
 #indexページ
 index as: :grid do |image|
   link_to image_tag(image.image_url), admin_image_path(image)
-
 end
+
+index do
+  column :image do |b|
+    image_tag(b.image.url(:thumb))
+  end
+    actions
+end
+
   # index do
   #   selectable_column
   #   id_column
@@ -30,9 +37,8 @@ end
   #showページ
   show do
     attributes_table do
-       
       row :image do |b|
-        image_tag(b.image.url(:thumb))
+        image_tag(b.image.url)
       end
       row :created_at
       row :updated_at
