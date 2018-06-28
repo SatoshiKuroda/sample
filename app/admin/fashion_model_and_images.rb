@@ -18,5 +18,7 @@ ActiveAdmin.register FashionModelAndImage do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-
+  index do
+    render partial: 'active_admin/test.html'
+  end
 end

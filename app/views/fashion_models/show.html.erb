@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名前:</strong>
   <%= @fashion_model.name %>
 </p>
 
 <p>
-  <strong>Height:</strong>
+  <strong>身長:</strong>
   <%= @fashion_model.height %>
 </p>
 
@@ -34,6 +34,7 @@
   <strong>Agency:</strong>
   <%= @fashion_model.agency_id %>
 </p>
+
 
 <%= link_to 'Edit', edit_fashion_model_path(@fashion_model) %> |
 <%= link_to 'Back', fashion_models_path %>

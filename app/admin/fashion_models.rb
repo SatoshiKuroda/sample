@@ -14,7 +14,9 @@ ActiveAdmin.register FashionModel do
 #   permitted
 # end
 
- 
+show do
+  render partial: 'show'
+end
 
 #formのコード
   form do |f|
