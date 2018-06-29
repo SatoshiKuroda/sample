@@ -17,7 +17,6 @@ ActiveAdmin.register FashionModel do
 show do
   render partial: 'show'
 end
-
 #formのコード
   form do |f|
     f.inputs 'モデル情報' do

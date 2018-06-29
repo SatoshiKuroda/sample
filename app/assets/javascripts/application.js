@@ -16,6 +16,3 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
-//= require hammer
-//= require web-animations
-//= require muuri

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js"></script>
+    <link rel="stylesheet" href="muuri.scss">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="grid">
+    <% @fashion_model.images.each do |i| %>
+        <div class="item">
+            <div class="item-content">
+                <%= image_tag(i.image_url, width: "150" ) %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+
+    <script type="text/javascript">
+        var grid = new Muuri('.grid', {
+            dragEnabled: true
+        });
+    </script>
+
+</body>
+
+</html>
