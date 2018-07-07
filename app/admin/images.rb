@@ -12,23 +12,34 @@ ActiveAdmin.register Image do
 #   permitted
 # end
 #indexページ
-  index do
-    selectable_column
-    id_column
-    column :image do |b|
-      image_tag(b.image.url(:thumb))
-    end
-    column :fashion_model_id
-    column :created_at
-    column :updated_at
-    actions
+index as: :grid do |image|
+  link_to image_tag(image.image_url), admin_image_path(image)
+end
+
+index do
+  id_column
+  column :image do |b|
+    image_tag(b.image.url(:thumb))
   end
+    actions
+end
+
+  # index do
+  #   selectable_column
+  #   id_column
+  #   column :image do |b|
+  #     image_tag(b.image.url(:thumb))
+  #   end
+  #   column :fashion_model_id
+
+  #   actions
+  # end
  
   #showページ
   show do
     attributes_table do
       row :image do |b|
-        image_tag(b.image.url(:thumb))
+        image_tag(b.image.url)
       end
       row :created_at
       row :updated_at

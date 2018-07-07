@@ -1,5 +1,7 @@
 ActiveAdmin.register FashionModel do
-# See permitted parameters documentation:
+  permit_params :name, :height, :bust, :waist, :hip, :gender, :agency, images_attributes: [:id, :image, :reference, :_destroy]
+
+  # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 # permit_params :list, :of, :attributes, :on, :model
@@ -12,6 +14,9 @@ ActiveAdmin.register FashionModel do
 #   permitted
 # end
 
+show do
+  render partial: 'show'
+end
 #formのコード
   form do |f|
     f.inputs 'モデル情報' do
@@ -21,15 +26,12 @@ ActiveAdmin.register FashionModel do
       f.input :waist
       f.input :hip
       f.input :gender
-      f.input :agency
+      f.input :agency_id
       f.has_many :images, allow_destroy: true,
-                new_record: true do |t|
+        new_record: true do |t|
         t.input :image
       end
       f.actions
     end
   end
- 
-  permit_params :name, :height, :bust, :waist, :hip, :gender, :agency, images_attributes: [:id, :image, :reference, :_destroy]
- 
 end

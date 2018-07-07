@@ -1,0 +1,102 @@
+* {
+  &:before,
+  &:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+body {
+  font-family: $fonts;
+  background-color: $bg_color;
+  color: $font_color;
+  text-align: center;
+  a,
+  a:visited {
+    color: $link_color;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $link_hover_color;
+  }
+}
+
+h1 {
+  font-size: 36px;
+  font-family: $web_fonts;
+  color: #53E2E4;
+  margin: 10px auto 30px;
+}
+
+.grid {
+  position: relative;
+  width: 878px;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.item {
+  display: block;
+  position: absolute;
+  margin: 5px;
+  z-index: 1;
+  cursor: move;
+}
+
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.custom-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  background: #fff;
+  color: #666;
+  border: 2px solid;
+  border-radius: 3px;
+}
+
+// If use dragging
+.item.muuri-item-dragging {
+  z-index: 3;
+}
+
+.item.muuri-item-releasing {
+  z-index: 2;
+}
+
+.item.muuri-item-hidden {
+  z-index: 0;
+}
+
+@media ( max-width: 877px) {
+  .item {
+    width: calc(33.33% - 11px);
+    height: calc(33.33vw - 11px);
+    &.w2 {
+      width: calc(33.33% - 11px);
+    }
+    &.h2 {
+      height: calc(33.33vw - 11px);
+    }
+  }
+}
+
+@media ( max-width: 640px) {
+  .item {
+    width: calc(50% - 10px);
+    height: calc(50vw - 10px);
+    &.w2 {
+      width: calc(50% - 10px);
+    }
+    &.h2 {
+      height: calc(50vw - 10px);
+    }
+  }
+}
